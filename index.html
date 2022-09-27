@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iChat App</title>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="JS/client.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+
+    <div id="contain_grid">
+
+        <!-- Left Navigation Start  -->
+        <div class="nav1 item">
+            <!-- nav1 -->
+            <img src="IMG/live-chat.png" alt="">
+            <h5 class="headText">ACTIVE PEOPLE</h5>
+            <h4 class="users_count"></h4>
+        </div>
+
+        <!-- Right Navigation Start -->
+        <div class="nav2 item">
+            <!-- nav2 -->
+            <div class=" logo">
+                <img src="IMG/Apps-Chat-icon.png" alt="" srcset="">
+                <h4> ICHAT</h4>
+            </div>
+            <div> <img src="IMG/moon1.png" alt="moon" id="moon">
+                <!-- <i class="fa-solid fa-moon-over-sun" id = 'moon'></i> -->
+            </div>
+            <button class="hamburger" onclick="show_Hide1() ; show_Hide2()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+
+
+        <!-- Left Section Start -->
+        <div class="container1 item">
+            <div class="active_Users">
+                <p></p>
+            </div>
+        </div>
+
+
+        <!-- Right Navigation Start -->
+        <div class="container2 item">
+            <!-- container2 -->
+            <div id="CURdate"> </div>
+        </div>
+
+        <!-- Form Input Start -->
+        <div class="send item">
+            <!-- send items -->
+            <form action="#" id="send_container">
+                <input type="text" name="name" value="" id="messageInp" placeholder="Write message......." />
+                <button class="btn" type="submit">
+                    SEND
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Javascript start -->
+    <script>
+        // Darkmode onclick function
+        var icon = document.getElementById('moon');
+        var ham = document.querySelector('.hamburger')
+        var nav1 = document.querySelector('.nav1');
+
+        function show_Hide1() {
+            var y = document.querySelector('.nav1');
+            var z = document.querySelector('#moon');
+            if (y.style.display === "none") {
+                y.style.display = "block";
+                y.style.display = 'flex';
+                z.style.display = 'block';
+            } else {
+                y.style.display = "none";
+                z.style.display = 'none';
+            }
+        };
+
+
+        function show_Hide2() {
+            var x = document.querySelector('.container1');
+
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        };
+
+
+
+        icon.onclick = function () {
+            document.body.classList.toggle('light_mode');
+            if (document.body.classList.contains('light_mode')) {
+                icon.src = 'IMG/sun.png';
+            }
+            else {
+                icon.src = 'IMG/moon1.png';
+            };
+        };
+
+
+
+
+        //Display Current Date
+        n = new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        document.getElementById("CURdate").innerHTML = m + "/" + d + "/" + y;
+
+    </script>
+</body>
+
+</html>

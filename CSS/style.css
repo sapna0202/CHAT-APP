@@ -1,0 +1,378 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    /* box-sizing: border-box; */
+}
+
+
+/* All Colors Used In pages */
+:root {
+    --nav_color: #56779c;
+    --bg_color1: #3c4f63;
+    --bg_color2: #3f4954;
+    --line: white;
+    --incoming: blue;
+
+}
+
+/*These colors used for light mode  */
+.light_mode {
+    --nav_color: white;
+    --bg_color1: #98a0a9;
+    --bg_color2: #adaeaf;
+    --line: black;
+
+}
+
+
+
+
+/* CONTAINERS STYLING */
+
+
+#contain_grid {
+
+    display: grid;
+    grid-template-columns: 18% auto;
+}
+
+.item {
+    color: var(--line);
+    /* border: 2px solid  red; */
+}
+
+
+
+
+
+/*Active Users Navigation */
+.nav1 {
+    background-color: var(--nav_color);
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 1rem;
+    border-right: 0.8px solid var(--line);
+}
+
+.nav1 img {
+    max-width: 2rem;
+}
+
+.nav1 .users_count {
+    background-color: var(--bg_color2);
+    padding: 0.4rem;
+    border-radius: 2rem;
+}
+
+
+
+
+
+/* Styling of container which display the name of active users */
+
+.container1 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    height: 92.9vh;
+    overflow-y: auto;
+    background-color: var(--bg_color1);
+    border-right: 0.8px solid var(--line);
+
+}
+
+.active_Users {
+    background-color: var(--nav_color);
+    margin-top: 0.7rem;
+    padding: 0.5rem;
+    text-transform: capitalize;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+.active_Users p {
+    margin: 1rem 0;
+}
+
+
+
+/* Ichat Navigation */
+.nav2 {
+    background: var(--nav_color);
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+}
+
+.nav2 img {
+    max-width: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background-color: var(--nav_color);
+    border: none;
+    outline: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--line);
+}
+
+#moon {
+    height: 34px;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Displaying Chats  */
+
+.container2 {
+    height: 85.8vh;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    background-color: var(--bg_color2);
+    overflow-y: auto;
+
+}
+
+.container2 #CURdate {
+    border-radius: 10px;
+    background: var(--nav_color);
+    padding: auto 2rem;
+    height: 5.5vh;
+    margin-bottom: 1.5rem;
+    margin: 1rem auto;
+    max-width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.user_joined {
+    background-color: var(--nav_color);
+    border-radius: 50px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.9rem;
+    width: max-content;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+/* Outgoing message */
+
+.left {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+
+
+}
+
+
+
+
+/* incoming message */
+
+.right {
+    margin-right: 0rem;
+    margin-left: auto;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.message {
+
+    color: var(--line);
+    background-color: var(--nav_color);
+    word-wrap: break-word;
+    width: max-content;
+    max-width: 30%;
+    padding: 0.5rem;
+    border-radius: 6px
+}
+
+
+
+
+/* div of form which take message as input */
+
+.send {
+    height: 7vh;
+    background-color: var(--nav_color);
+
+}
+
+/* #send_container{
+    width: 2rem;
+} */
+
+.send #send_container #messageInp {
+    outline: none;
+    border: none;
+    padding: 0.8rem;
+    background: transparent;
+    box-shadow: 1px 1px 4px;
+    color: var(--line);
+    width: 93.9%;
+   max-height: 3.2vh;
+}
+
+::placeholder {
+    color: var(--line);
+}
+
+
+
+
+/* button styling */
+
+.send #send_container .btn {
+    
+    height: 7.2vh;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 4px;
+    cursor: pointer;
+    background: transparent;
+    color: var(--line);
+}
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width:1024px){
+    #contain_grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .nav1 {
+        position: absolute;
+        width: 43rem;
+        top: 0%;
+        left: 0%;
+        display: none;
+    }
+
+    .container1 {
+        position: absolute;
+        top: 4rem;
+        left: 0%;
+        width: 99.9%;
+        height: max-content;
+        box-shadow: 0px 0px 3px;
+        padding: 2rem 0;
+        display: none;
+    }
+    .hamburger {
+        margin-right: 1rem;
+        display: block;
+    }
+
+    .active_Users {
+        padding: 1.5rem;
+    }
+
+    #moon {
+        display: none;
+        position: absolute;
+        top: 7rem;
+        left: 2rem;
+        z-index: 1;
+    }
+    .send #send_container #messageInp {
+        width: 90.9%;
+        height: 4.2vh;
+    }
+
+    
+}
+
+
+/* iphone 6,7,8 */
+
+@media only screen and (max-width: 600px)
+{
+
+    .nav1 {
+        position: absolute;
+        width: 19rem;
+        top: 0%;
+        left: 0%;
+        display: none;
+    }
+
+    .container1 {
+        position: absolute;
+        top: 3rem;
+        left: 0%;
+        width: 100%;
+        height: max-content;
+        box-shadow: 0px 0px 3px;
+        padding: 1rem 0;
+        display: none;
+    }
+
+    #contain_grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .hamburger {
+        margin-right: 1rem;
+        display: block;
+    }
+
+    #moon {
+        display: none;
+        position: absolute;
+        top: 5rem;
+        left: 2rem;
+        z-index: 1;
+    }
+    .send #send_container #messageInp {
+        width: 81.9%;
+        height: 1.3rem;
+
+    }
+  
+
+}
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
